@@ -67,6 +67,7 @@ export const CheckoutComponent = (props) => {
                 <div
                   onBlur={(e) => setState({ ...state, error: false })}
                   className="p-4 md:p-8"
+                  style={{ padding: "6rem" }}
                 >
                   {state.error ? (
                     <div className="bg-red-200 py-2 px-4 rounded">
@@ -77,7 +78,7 @@ export const CheckoutComponent = (props) => {
                   )}
                   <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
-                      Dalivery Address
+                      Delivery Address
                     </label>
                     <input
                       value={state.address}
@@ -190,13 +191,13 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
+                    Price : ₹{product.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+                    Subtotal : ₹{subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>
               </div>
